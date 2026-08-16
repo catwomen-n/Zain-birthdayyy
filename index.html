@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes">
+<title>For Zain — 19.08 🩵</title>
+<style>
+:root{--bg:#f7fbff;--panel:#ffffff;--blue:#9edcff;--blue2:#e8f7ff;--white:#fff;--ink:#3d5364;--pink:#ffc9df;--lav:#ddd2ff;--mint:#ccefe4;--muted:#78909f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f4fbff 0%,#fff8fc 42%,#f7f3ff 100%);color:var(--ink);font-family:Georgia,serif;overflow-x:hidden}
+#stars,.hearts{position:fixed;inset:0;pointer-events:none;z-index:0}.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#b8e5ff;opacity:.7;animation:blink 3s infinite}
+@keyframes blink{50%{opacity:.12;transform:scale(.4)}}
+.heart{position:absolute;color:var(--pink);animation:up 6s linear forwards;font-size:22px;text-shadow:0 2px 10px rgba(255,160,200,.25)}
+@keyframes up{0%{transform:translateY(20px);opacity:0}15%{opacity:.9}100%{transform:translateY(-110vh) translateX(80px);opacity:0}}
+section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:70px 20px;position:relative;z-index:1}
+.wrap{width:min(900px,100%);text-align:center}.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#72bfe8}
+h1{font-size:clamp(70px,18vw,150px);line-height:.82;margin:22px 0 15px;letter-spacing:-5px}
+h2{font-size:clamp(35px,8vw,65px);line-height:1;margin:12px 0 25px}
+p{font:17px/1.8 Arial,sans-serif;color:#526a79}.muted{color:var(--muted)}
+.blue{color:var(--blue)}
+.card{background:rgba(255,255,255,.82);border:2px solid rgba(158,220,255,.45);border-radius:30px;padding:30px;box-shadow:0 18px 60px rgba(110,170,210,.18);backdrop-filter:blur(16px)}
+.btn{display:inline-block;border:2px solid #a9dcf7;background:linear-gradient(135deg,#dff5ff,#ffe8f2);color:#456274;border-radius:999px;padding:14px 22px;margin:7px;font:700 13px Arial,sans-serif;text-decoration:none;cursor:pointer;transition:.25s;box-shadow:0 7px 20px rgba(120,190,230,.18)}
+.btn:hover{background:#d8efff;color:#40586a;transform:translateY(-2px)}
+.letter{text-align:left}.letter p{font-family:Georgia,serif;font-size:19px;line-height:1.95}
+.quote{font-size:clamp(25px,6vw,45px);line-height:1.35;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:25px}
+.tile{padding:25px;border:2px solid rgba(158,220,255,.25);border-radius:22px;background:linear-gradient(145deg,#ffffff,#f4fbff);font:15px/1.6 Arial,sans-serif;box-shadow:0 10px 30px rgba(150,200,230,.12)}
+.tile b{display:block;font:700 28px Arial,sans-serif;color:var(--blue);margin-bottom:10px}
+.timeline{text-align:left;border-left:1px solid rgba(168,220,255,.35);margin:25px 8px;padding-left:24px}
+.event{margin:0 0 28px}.event strong{color:var(--blue);font:700 12px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+footer{position:relative;z-index:1;text-align:center;padding:30px;color:#78909f;font:11px Arial,sans-serif}
+.small{font:12px Arial,sans-serif;color:#7f919e}
+
+.doodle{position:absolute;font-size:28px;opacity:.8;pointer-events:none;animation:wobble 4s ease-in-out infinite}
+.d1{left:7%;top:14%;color:#ffb9d5}.d2{right:8%;top:22%;color:#a9dcf7}.d3{left:10%;bottom:15%;color:#cbbdff}.d4{right:10%;bottom:12%;color:#a9e7d4}
+@keyframes wobble{50%{transform:rotate(8deg) translateY(-5px)}}
+.yesrow{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:20px 0}
+.yesrow .btn{min-width:78px;font-size:15px}
+.pastel-note{display:inline-block;background:#fff0f7;border:2px solid #ffd0e3;border-radius:18px;padding:9px 15px;color:#7d6170;font:700 12px Arial,sans-serif;transform:rotate(-2deg)}
+
+.love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px auto;max-width:850px}
+.love-card{position:relative;text-align:left;border:2px solid #c8eafa;background:linear-gradient(145deg,#fff,#f5fbff);border-radius:26px;padding:25px 22px;min-height:190px;cursor:pointer;box-shadow:0 12px 35px rgba(120,190,230,.14);transition:.25s;color:#526a79}
+.love-card:nth-child(2){background:linear-gradient(145deg,#fff8fc,#fff);border-color:#ffd3e5}
+.love-card:nth-child(3){background:linear-gradient(145deg,#faf8ff,#fff);border-color:#ded5ff}
+.love-card:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 18px 45px rgba(120,190,230,.2)}
+.love-num{font:700 11px Arial,sans-serif;letter-spacing:2px;color:#79bfe4;display:block}
+.love-icon{font-size:32px;display:block;margin:22px 0 10px}
+.love-card strong{font:700 18px Arial,sans-serif;display:block}
+.love-card small{font:12px Arial,sans-serif;color:#93a6b2;display:block;margin-top:8px}
+.love-modal{display:none;position:fixed;inset:0;z-index:20;background:rgba(110,150,175,.28);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+.love-modal.show{display:flex}
+.love-modal-inner{position:relative;max-width:680px;width:100%;max-height:85svh;overflow:auto;background:#fff;border:3px solid #bde6fa;border-radius:30px;padding:38px 30px;box-shadow:0 25px 80px rgba(80,130,170,.25);animation:pop .25s ease}
+.close-love{position:absolute;right:15px;top:12px;border:0;background:#edf8ff;color:#668294;border-radius:50%;width:36px;height:36px;font-size:25px;cursor:pointer}
+.love-text{font:18px/1.9 Georgia,serif;color:#536b79;text-align:left}
+.love-text p{font-family:Georgia,serif;font-size:18px;line-height:1.9}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@media(max-width:700px){.love-grid{grid-template-columns:1fr}.love-card{min-height:145px}.love-icon{margin:12px 0 7px}.love-modal-inner{padding:35px 22px}.love-text p{font-size:17px}}
+
+.simple-note{position:relative;text-align:left;margin:20px auto;max-width:760px;padding:28px 30px 25px;border-radius:28px;background:#fff;box-shadow:0 12px 35px rgba(120,180,215,.13);border:2px solid}
+.note-blue{border-color:#bde6fa;background:linear-gradient(135deg,#fff,#f4fbff)}
+.note-pink{border-color:#ffd2e4;background:linear-gradient(135deg,#fff,#fff7fb)}
+.note-lav{border-color:#ddd3ff;background:linear-gradient(135deg,#fff,#faf8ff)}
+.note-number{font:700 11px Arial,sans-serif;letter-spacing:3px;color:#78bddd}
+.note-icon{font-size:30px;margin:9px 0 4px}
+.simple-note h3{font:700 23px Arial,sans-serif;color:#536b79;margin:5px 0 10px}
+.simple-note p{font-family:Georgia,serif;font-size:17px;line-height:1.8;margin:8px 0}
+.mini-signature{text-align:center!important;color:#72bfe8!important;font-size:21px!important;margin-top:18px!important}
+
+.doodle-wall{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.doodle-wall span{position:absolute;font-family:"Comic Sans MS","Bradley Hand",cursive;font-weight:700;opacity:.72;filter:rotate(0deg);animation:wiggle 5s ease-in-out infinite}
+.dh{font-size:34px;color:#f3aeca}.dh2{font-size:29px;color:#9bd8f5}.dh3{font-size:26px;color:#c9b8f7}.dh4{font-size:30px;color:#a9dfce}.dh5{font-size:24px;color:#f5c58e}
+@keyframes wiggle{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(5deg) translateY(-4px)}}
+.doodle-wall .p1{left:3%;top:9%}.doodle-wall .p2{right:4%;top:13%}.doodle-wall .p3{left:6%;top:34%}.doodle-wall .p4{right:6%;top:39%}
+.doodle-wall .p5{left:2%;top:61%}.doodle-wall .p6{right:3%;top:67%}.doodle-wall .p7{left:8%;bottom:7%}.doodle-wall .p8{right:8%;bottom:6%}
+.doodle-wall .p9{left:22%;top:4%}.doodle-wall .p10{right:22%;top:5%}.doodle-wall .p11{left:18%;bottom:4%}.doodle-wall .p12{right:18%;bottom:5%}
+.hero-doodles{position:absolute;inset:0;pointer-events:none}
+.hero-doodles .scribble{position:absolute;font-family:"Comic Sans MS","Bradley Hand",cursive;line-height:1}
+.scribble.s1{left:11%;top:22%;font-size:48px;color:#ffb6d4;transform:rotate(-16deg)}
+.scribble.s2{right:12%;top:28%;font-size:42px;color:#a7ddf7;transform:rotate(13deg)}
+.scribble.s3{left:17%;bottom:22%;font-size:37px;color:#c8b8f5;transform:rotate(9deg)}
+.scribble.s4{right:16%;bottom:19%;font-size:45px;color:#a9dfcf;transform:rotate(-12deg)}
+.scribble.s5{left:46%;top:11%;font-size:25px;color:#f0bdcf}
+
+/* Birthday additions */
+.wish-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:28px auto;max-width:850px}
+.wish-card{background:#fff;border:2px solid #cfeaff;border-radius:24px;padding:22px;text-align:left;box-shadow:0 10px 28px rgba(120,190,230,.12);font:15px/1.65 Arial,sans-serif}
+.wish-card:nth-child(3n+2){border-color:#ffd5e6;background:#fff9fc}.wish-card:nth-child(3n){border-color:#ddd4ff;background:#fbf9ff}
+.wish-card b{display:block;color:#78bfe4;font-size:11px;letter-spacing:2px;margin-bottom:8px}
+.wish-card h3{font:700 18px Arial,sans-serif;margin:4px 0 8px;color:#536b79}.wish-card p{font:15px/1.75 Georgia,serif;color:#607684;margin:8px 0 0}
+.future-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:28px}
+.future-card{padding:24px;border-radius:24px;background:linear-gradient(145deg,#fff,#f4fbff);border:2px solid #cdeaff;box-shadow:0 10px 28px rgba(120,190,230,.12);text-align:left}
+.future-card:nth-child(2){background:linear-gradient(145deg,#fff8fc,#fff);border-color:#ffd4e5}
+.future-card:nth-child(3){background:linear-gradient(145deg,#faf8ff,#fff);border-color:#ddd4ff}
+.future-card:nth-child(4){background:linear-gradient(145deg,#f5fffb,#fff);border-color:#c9eadf}
+.future-card:nth-child(5){background:linear-gradient(145deg,#fffaf1,#fff);border-color:#f4dfb6}
+.future-card .future-icon{font-size:31px;margin-bottom:10px}
+.future-card strong{display:block;font:700 18px Arial,sans-serif;color:#536b79;margin-bottom:8px}
+.open-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:28px auto;max-width:800px}
+.open-btn{border:2px solid #bfe5fa;background:linear-gradient(135deg,#eaf8ff,#fff0f7);color:#536b79;border-radius:20px;padding:17px 12px;font:700 13px Arial,sans-serif;cursor:pointer;transition:.2s;box-shadow:0 7px 18px rgba(120,190,230,.12)}
+.open-btn:hover{transform:translateY(-3px)}
+.open-modal{display:none;position:fixed;inset:0;z-index:30;background:rgba(100,140,170,.28);backdrop-filter:blur(9px);align-items:center;justify-content:center;padding:20px}
+.open-modal.show{display:flex}
+.open-inner{position:relative;width:min(650px,100%);max-height:82svh;overflow:auto;background:#fff;border:3px solid #bde6fa;border-radius:30px;padding:40px 28px;box-shadow:0 25px 80px rgba(80,130,170,.25);text-align:center}
+.open-inner h3{font:700 28px Georgia,serif;color:#536b79;margin:5px 0 18px}
+.open-inner p{font-family:Georgia,serif;font-size:18px;line-height:1.9}
+.open-close{position:absolute;right:14px;top:11px;border:0;background:#edf8ff;color:#668294;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}
+.birthday-note{display:inline-block;background:#fff0f7;border:2px solid #ffd0e3;border-radius:18px;padding:9px 15px;color:#7d6170;font:700 12px Arial,sans-serif;transform:rotate(1deg)}
+
+
+.open-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:28px auto;max-width:800px}
+.open-btn{border:2px solid #bfe5fa;background:linear-gradient(135deg,#eaf8ff,#fff0f7);color:#536b79;border-radius:20px;padding:17px 12px;font:700 13px Arial,sans-serif;cursor:pointer;transition:.2s;box-shadow:0 7px 18px rgba(120,190,230,.12)}
+.open-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(120,190,230,.2)}
+.open-modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(100,140,170,.32);backdrop-filter:blur(9px);align-items:center;justify-content:center;padding:20px}
+.open-modal.show{display:flex}
+.open-inner{position:relative;width:min(650px,100%);max-height:82svh;overflow:auto;background:#fff;border:3px solid #bde6fa;border-radius:30px;padding:40px 28px;box-shadow:0 25px 80px rgba(80,130,170,.25);text-align:center}
+.open-inner h3{font:700 28px Georgia,serif;color:#536b79;margin:5px 0 18px}
+.open-inner p{font-family:Georgia,serif;font-size:18px;line-height:1.9}
+.open-close{position:absolute;right:14px;top:11px;border:0;background:#edf8ff;color:#668294;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}
+.final-burst{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden}
+.burst-heart{position:absolute;font-size:25px;animation:finalBurst 2.8s ease-out forwards}
+@keyframes finalBurst{
+0%{transform:translate(0,0) scale(.4) rotate(0deg);opacity:0}
+12%{opacity:1}
+100%{transform:translate(var(--dx),var(--dy)) scale(1.3) rotate(360deg);opacity:0}
+}
+#final{min-height:32px}
+
+
+/* iPhone / mobile compatibility */
+html,body{width:100%;min-height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation;-webkit-appearance:none}
+section{min-height:100svh;min-height:100dvh}
+.open-modal{padding:max(20px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+.open-inner{max-height:78dvh;-webkit-overflow-scrolling:touch}
+@media(max-width:700px){
+  section{padding:55px 16px}
+  h1{font-size:clamp(64px,20vw,110px)}
+  h2{font-size:clamp(31px,9vw,52px)}
+  p{font-size:16px}
+  .card{padding:24px 18px;border-radius:24px}
+  .wish-grid,.future-grid,.open-grid{grid-template-columns:1fr}
+  .wish-card{padding:20px 18px}
+  .wish-card p{font-size:16px;line-height:1.75}
+  .open-btn{min-height:58px;font-size:14px}
+  .open-inner{padding:38px 20px 25px;border-radius:26px}
+  .open-inner p{font-size:17px;line-height:1.75}
+}
+
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="hearts" id="hearts"></div>
+
+<section><div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<span class="doodle d1">♡</span><span class="doodle d2">✿</span><span class="doodle d3">♡</span><span class="doodle d4">✦</span>
+<div class="hero-doodles"><span class="scribble s1">♡</span><span class="scribble s2">☺︎</span><span class="scribble s3">✿</span><span class="scribble s4">♡</span><span class="scribble s5">✦</span></div>
+<div class="wrap">
+<div class="pastel-note">made with way too much love ♡</div>
+<div class="eyebrow" style="margin-top:22px">for my birthday boy</div>
+<h1 style="color:#6aaed2">Zain<span class="blue">♡</span></h1>
+<p class="muted">my favorite BIGBACK • my favorite person • my love</p>
+<p>okay... I made you a little something 🩵</p>
+<h2 style="font-size:clamp(30px,7vw,52px);color:#6b8090;margin-top:30px">OPEN UR SURPRISE</h2>
+<div class="yesrow">
+<a class="btn" href="#letter">YES 🩵</a>
+<a class="btn" href="#letter">OR YES 🩷</a>
+</div>
+<p class="small">there is only one correct answer 😭</p>
+</div>
+</section>
+
+<section id="letter"><div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<span class="doodle d1">♡</span><span class="doodle d2">🌸</span>
+<div class="wrap">
+<div class="eyebrow">a little letter for you</div>
+<h2>Three little pieces of my heart 🩵</h2>
+<p class="muted">No clicking, no secrets — just three little things I want you to know.</p>
+
+<div class="simple-note note-blue">
+  <span class="note-number">01</span>
+  <div class="note-icon">♡</div>
+  <h3>What you mean to me</h3>
+  <p>Zain, I love you so much. You became such a special part of my everyday life, and somehow even from far away, you make my days feel brighter. I love our little moments, our laughs, our conversations, and simply having you in my life. You are one of the people I am most grateful for. 🩵</p>
+</div>
+
+<div class="simple-note note-pink">
+  <span class="note-number">02</span>
+  <div class="note-icon">🌷</div>
+  <h3>How proud I am</h3>
+  <p>I want you to know how incredibly proud I am of you. I'm proud of the person you are and the person you're becoming. I believe in your dreams, your abilities, and everything you can accomplish. Whenever you doubt yourself, I hope you remember that there is someone here who looks at you and thinks, “that's my man, and I'm so proud of him.” 🌸</p>
+</div>
+
+<div class="simple-note note-lav">
+  <span class="note-number">03</span>
+  <div class="note-icon">✦</div>
+  <h3>Our little story</h3>
+  <p>173 days of choosing each other, learning each other, laughing together, missing each other, and making a relationship work across the distance. I wish I could be beside you today, but until that day comes, I'll keep collecting every call, every laugh, and every memory with you. If I had to choose you all over again, I would. 🤍</p>
+  <p class="mini-signature">Happy birthday, my BIGBACK. I love you. 🩵</p>
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+<section>
+<div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<div class="wrap">
+<div class="eyebrow">little things I love about you</div>
+<h2>Why I love you 🩵</h2>
+<p class="muted">Not just the big things. The tiny things too.</p>
+
+<div class="wish-grid">
+<div class="wish-card"><b>01</b><h3>Your heart ♡</h3><p>You have such a beautiful heart, and I love the way you care about the people you love. Even when you don't realize it, your kindness shows in so many little things. It is one of the first things that made me feel safe with you. I hope you never lose that part of yourself.</p></div>
+<div class="wish-card"><b>02</b><h3>Your personality ☺︎</h3><p>I love the way you can make me laugh without even trying. You have your own little way of making ordinary conversations feel special. Even on days when I don't feel like smiling, somehow you manage to change my mood. Being able to be completely myself around you means so much to me.</p></div>
+<div class="wish-card"><b>03</b><h3>Your little habits 🌷</h3><p>There are so many tiny things you do that you probably don't even notice. The little expressions, the way you talk, the random things you say, and all your little habits have become things I secretly adore. They are the details that make you uniquely you. And honestly, I wouldn't change any of them.</p></div>
+<div class="wish-card"><b>04</b><h3>The way you love me 🩵</h3><p>I love the way you make me feel like I matter to you. Even with the distance between us, you have found so many ways to make me feel close to you. I cherish every conversation, every laugh, and every moment we get together. You make loving you feel like something I never want to stop doing.</p></div>
+<div class="wish-card"><b>05</b><h3>Your dreams ✦</h3><p>I love hearing you talk about the things you want for your future. I am proud of how much you want to grow and become better, even when things are difficult. I believe in your abilities more than you probably realize. I will always be cheering for you and celebrating every step you take.</p></div>
+<div class="wish-card"><b>06</b><h3>Just... you 🤍</h3><p>Sometimes I honestly can't explain exactly why I love you so much. It isn't only one thing about you, but every little part of you coming together. Your heart, your personality, your imperfections, your dreams, and everything in between. I simply love you for being the person you are.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<div class="wrap">
+<div class="birthday-note">for every year you've been you ♡</div>
+<div class="eyebrow" style="margin-top:18px">birthday wishes</div>
+<h2>19 wishes for your 19th birthday 🎂</h2>
+<p class="muted">One little wish for every year of your life.</p>
+<div class="wish-grid">
+<div class="wish-card"><b>01</b><h3>A beautiful year ✦</h3><p>I hope this new year of your life brings you more happiness than you expect. I hope you wake up excited for what is ahead of you and proud of how far you have already come. You deserve beautiful things, beautiful moments, and people who genuinely love you.</p></div>
+<div class="wish-card"><b>02</b><h3>Confidence ✦</h3><p>I hope you learn to see yourself through my eyes sometimes. I wish you could see how capable, special, and worthy you are. Never let one bad day make you question your entire future. You are so much more than your doubts.</p></div>
+<div class="wish-card"><b>03</b><h3>Your dreams ✦</h3><p>I hope every dream you have starts feeling a little more possible this year. I want to see you work for the things you want and eventually look back knowing you never gave up. I will always believe that you can accomplish more than you think.</p></div>
+<div class="wish-card"><b>04</b><h3>Happiness ✦</h3><p>I wish you the kind of happiness that stays even after the exciting moments are over. I hope you find joy in the smallest things, laugh until your stomach hurts, and have more good days than difficult ones. You deserve to feel genuinely happy.</p></div>
+<div class="wish-card"><b>05</b><h3>Good people ✦</h3><p>I hope you are surrounded by people who appreciate your heart and never make you feel like you have to change who you are. I hope you keep the people who bring peace into your life close. And I hope you always know that I am one of the people cheering for you.</p></div>
+<div class="wish-card"><b>06</b><h3>Peace ✦</h3><p>I wish you peace on the days when your mind feels too full. I hope you learn that you don't have to solve everything at once. Give yourself the same patience you give to everyone else. You deserve rest, softness, and moments where everything feels okay.</p></div>
+<div class="wish-card"><b>07</b><h3>Success ✦</h3><p>I hope all the effort you put into your future eventually comes back to you in ways that make you proud. I want to see you reach goals that once felt impossible. And when you do, I hope you remember how hard you worked to get there.</p></div>
+<div class="wish-card"><b>08</b><h3>Courage ✦</h3><p>I wish you the courage to choose what makes you happy, even when it is scary. I hope you never stay somewhere just because you are afraid of change. Trust yourself, trust your instincts, and remember that taking a new step does not mean you are leaving everything behind.</p></div>
+<div class="wish-card"><b>09</b><h3>Self-belief ✦</h3><p>Whenever you doubt yourself, I hope you remember that I believe in you. I see things in you that you sometimes forget are there. You don't have to be perfect to be amazing. Just keep becoming the person you want to be.</p></div>
+<div class="wish-card"><b>10</b><h3>Our memories ✦</h3><p>I hope this year gives us so many new memories that we stop trying to count them. I want more random conversations, more laughing until we can't breathe, more little moments that only make sense to us. I want to keep collecting pieces of our story with you.</p></div>
+<div class="wish-card"><b>11</b><h3>Our firsts ✦</h3><p>I hope we get to experience more of the things distance has made us wait for. The first real hug, the first day together without a screen between us, and all the little firsts that come after. I already know those moments will mean everything to me.</p></div>
+<div class="wish-card"><b>12</b><h3>Big laughs ✦</h3><p>I wish you a year filled with the kind of laughter that makes your cheeks hurt. I want to be part of as many of those moments as I possibly can. Some of my favorite memories are simply the moments when we are being stupid together and laughing for no reason.</p></div>
+<div class="wish-card"><b>13</b><h3>Little moments ✦</h3><p>I hope you never underestimate the ordinary days. Sometimes the smallest conversations and simplest moments become the memories we remember most. I want a future with you where even doing absolutely nothing together feels special because it is with you.</p></div>
+<div class="wish-card"><b>14</b><h3>Love ✦</h3><p>I hope you never question how loved you are. There is someone out here who thinks about you, worries about you, is proud of you, misses you, and loves you more than you probably realize. I hope you carry that feeling with you even on difficult days.</p></div>
+<div class="wish-card"><b>15</b><h3>Growth ✦</h3><p>I hope this year helps you become an even stronger and happier version of yourself. Growing doesn't mean becoming someone completely different. It means discovering more of who you already are and becoming comfortable with it. I will be proud of you through every version.</p></div>
+<div class="wish-card"><b>16</b><h3>Adventure ✦</h3><p>I hope life surprises you in the best possible ways. I want you to see new places, try new things, meet people who inspire you, and collect stories you will tell for years. And selfishly, I hope I get to be beside you for many of those adventures.</p></div>
+<div class="wish-card"><b>17</b><h3>Us ✦</h3><p>I hope we keep choosing each other through every version of ourselves. Relationships aren't about everything always being perfect; they are about continuing to care, communicate, and grow together. I hope we keep building something that feels safe, honest, and completely ours.</p></div>
+<div class="wish-card"><b>18</b><h3>The future ✦</h3><p>I hope the future gives you even more than you are brave enough to dream about right now. I hope when you look back at this birthday years from now, you are proud of the person you became. And I hope I am still right there beside you, celebrating you.</p></div>
+<div class="wish-card"><b>19</b><h3>This birthday ✦</h3><p>Most of all, I hope you remember how loved you were today. Even though I can't be beside you the way I wish I could, I wanted to make something that reminds you that you are special to me. Happy birthday, my love. I hope this is the beginning of one of your best years yet.</p></div>
+</div>
+</div>
+</section>
+
+
+
+
+<section>
+<div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<div class="wrap">
+<div class="eyebrow">the future I want with you</div>
+<h2>Things I can't wait to do with you 🌷</h2>
+<div class="future-grid">
+<div class="future-card"><div class="future-icon">🤍</div><strong>The first hug</strong>The one we've been waiting for. The kind where neither of us wants to let go.</div>
+<div class="future-card"><div class="future-icon">🌙</div><strong>A random late-night drive</strong>No destination. Just you, me, music, and nowhere we need to be.</div>
+<div class="future-card"><div class="future-icon">🍿</div><strong>Movie nights together</strong>No screen between us. Just us on the same couch, arguing about what to watch.</div>
+<div class="future-card"><div class="future-icon">🎂</div><strong>Celebrating birthdays together</strong>One day I won't have to send you a birthday website at midnight. 😭</div>
+<div class="future-card"><div class="future-icon">🏡</div><strong>The ordinary days</strong>Honestly, these are the ones I want most. The boring little moments that become our favorite memories.</div>
+</div>
+<div class="card" style="margin-top:25px">
+<p class="quote">“I don't just want memories with you.<br><span class="blue">I want a life full of them.</span>”</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<div class="wrap">
+<div class="eyebrow">a little something for later</div>
+<h2>Open Me 💌</h2>
+<p class="muted">Choose one whenever you need a little reminder from me.</p>
+<div class="open-grid">
+<button class="open-btn" data-open="missing">🩵 When you miss me</button>
+<button class="open-btn" data-open="sleep">🌙 When you can't sleep</button>
+<button class="open-btn" data-open="bad">🥺 When you're having a bad day</button>
+<button class="open-btn" data-open="doubt">💭 When you doubt yourself</button>
+<button class="open-btn" data-open="love">😭 When you need to know I love you</button>
+<button class="open-btn" data-open="birthday">🎂 When you want to remember today</button>
+</div>
+</div>
+</section>
+
+<div id="openModal" class="open-modal" aria-hidden="true">
+<div class="open-inner">
+<button class="open-close" id="openClose" aria-label="Close">×</button>
+<div id="openIcon" style="font-size:38px">🩵</div>
+<h3 id="openTitle"></h3>
+<p id="openMessage"></p>
+</div>
+</div>
+<section><div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div><span class="doodle d3">🌷</span><span class="doodle d4">♡</span>
+<div class="wrap">
+<div class="eyebrow">long distance, same heart</div><h2>Until the distance disappears...</h2>
+<div class="card">
+<p class="quote">“One day, the screen between us will be gone, and I'll finally get to celebrate you in person.”</p>
+<p class="muted">Until then, every call, message, laugh and little memory counts.</p>
+</div>
+</div>
+</section>
+
+
+
+
+<section>
+<div class="doodle-wall">
+<span class="dh p1">♡</span><span class="dh2 p2">☺︎</span><span class="dh3 p3">✿</span>
+<span class="dh4 p4">♡</span><span class="dh5 p5">✦</span><span class="dh p6">🌸</span>
+<span class="dh2 p7">♡</span><span class="dh3 p8">☺︎</span><span class="dh4 p9">✿</span>
+<span class="dh p10">♡</span><span class="dh5 p11">✦</span><span class="dh2 p12">🌷</span>
+</div>
+<div class="wrap">
+<div class="eyebrow">one last thing</div>
+<h2>And if you ever wonder...</h2>
+<div class="card">
+<p class="quote">Out of everyone in this world,<br>somehow I found you.</p>
+<p>I don't know what I did to deserve having you in my life, but I am so grateful I get to love you.</p>
+<p>And if life gave me the chance to start everything again...</p>
+<p class="quote"><span class="blue">I'd still find you.<br>I'd still choose you.</span> 🩵</p>
+<p>Happy birthday, my love.</p>
+<p>You are loved. You are appreciated. You are someone I am incredibly proud of.</p>
+<p class="blue" style="font-size:23px">And you are my BIGBACK. Forever. 😭🩵</p>
+<button class="btn" onclick="magic()">One last surprise ✨</button>
+<p id="final"></p>
+</div>
+</div>
+</section>
+
+
+<footer>Made with love by Jihane • 19 August • Zain 🩵</footer>
+
+
+<script>
+(function(){
+  'use strict';
+
+  /* Background stars */
+  var stars = document.getElementById('stars');
+  if (stars) {
+    for (var i=0;i<80;i++) {
+      var s=document.createElement('span');
+      s.className='star';
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*100)+'%';
+      s.style.animationDelay=(Math.random()*3)+'s';
+      stars.appendChild(s);
+    }
+  }
+
+  /* Floating hearts */
+  var hearts=document.getElementById('hearts');
+  function addHeart(){
+    if(!hearts)return;
+    var h=document.createElement('span');
+    h.className='heart';
+    var symbols=['♡','♡','✿','🌸','✦','🩵','🩷'];
+    h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    h.style.left=(Math.random()*100)+'vw';
+    h.style.bottom='-25px';
+    hearts.appendChild(h);
+    window.setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h)},6000);
+  }
+  window.setInterval(addHeart,700);
+
+  /* Open Me */
+  var messages={
+    missing:['🩵','When you miss me','Come here, bigback. 🩵 I know I can’t physically be there right now, but I hope you know you’re never actually alone. Somewhere, I’m thinking about you, missing you, and loving you. One day I won’t have to send you words through a screen. I’ll just be able to hug you.'],
+    sleep:['🌙','When you can’t sleep','Close your eyes and imagine me right there beside you. No distance, no screen, no waiting — just us. Take a deep breath and remember that every day that passes is one day closer to all the moments we still have ahead of us. Sleep well, my love. 🤍'],
+    bad:['🥺','When you’re having a bad day','You don’t have to have everything figured out today. You’re allowed to have bad days, and you’re allowed to rest. Please be gentle with yourself. I believe in you even on the days when you don’t believe in yourself. Come back here whenever you need that reminder. 🩵'],
+    doubt:['💭','When you doubt yourself','Read this slowly: you are capable, you are talented, and you are worth being proud of. One difficult moment does not define your future. I see so much potential in you, and I will keep believing in you until you can see it too.'],
+    love:['😭','When you need to know I love you','I love your heart, your mind, your laugh, your weird little habits, your dreams, and all the little things that make you you. I love the easy moments and I love you through the difficult ones too. If you ever forget, come back here. The answer will always be the same: I love you. 🩵'],
+    birthday:['🎂','When you want to remember today','Today is your birthday, and I hope you remember one thing above everything else: you are so loved. I wish I could be beside you to celebrate properly, but until I can, I hope this little website reminds you that somewhere, your girl is smiling because you exist. Happy birthday, Zain. 🩵']
+  };
+
+  var modal=document.getElementById('openModal');
+  var icon=document.getElementById('openIcon');
+  var title=document.getElementById('openTitle');
+  var message=document.getElementById('openMessage');
+  var close=document.getElementById('openClose');
+
+  function showOpen(key){
+    var m=messages[key];
+    if(!m||!modal)return;
+    icon.textContent=m[0];
+    title.textContent=m[1];
+    message.textContent=m[2];
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+  }
+
+  function hideOpen(){
+    if(!modal)return;
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  var openButtons=document.querySelectorAll('.open-btn[data-open]');
+  for(var j=0;j<openButtons.length;j++){
+    (function(btn){
+      btn.addEventListener('click',function(){showOpen(btn.getAttribute('data-open'));},false);
+      btn.addEventListener('touchend',function(e){
+        e.preventDefault();
+        showOpen(btn.getAttribute('data-open'));
+      },{passive:false});
+    })(openButtons[j]);
+  }
+
+  if(close){
+    close.addEventListener('click',hideOpen,false);
+    close.addEventListener('touchend',function(e){e.preventDefault();hideOpen();},{passive:false});
+  }
+  if(modal){
+    modal.addEventListener('click',function(e){
+      if(e.target===modal)hideOpen();
+    },false);
+  }
+
+  /* Final surprise */
+  window.magic=function(){
+    var final=document.getElementById('final');
+    if(final){
+      final.innerHTML='<span class="blue">I love you, Zain. Happy birthday. 🤍🩵</span>';
+    }
+
+    var burst=document.querySelector('.final-burst');
+    if(!burst){
+      burst=document.createElement('div');
+      burst.className='final-burst';
+      document.body.appendChild(burst);
+    }
+    burst.innerHTML='';
+
+    var symbols=['♡','✦','🩵','🤍','🩷','🌸','✨'];
+    for(var k=0;k<55;k++){
+      var h=document.createElement('span');
+      h.className='burst-heart';
+      h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      h.style.left=(45+Math.random()*10)+'vw';
+      h.style.top=(45+Math.random()*10)+'vh';
+      h.style.setProperty('--dx',((Math.random()-.5)*115)+'vw');
+      h.style.setProperty('--dy',((Math.random()-.5)*115)+'vh');
+      h.style.animationDelay=(Math.random()*.4)+'s';
+      burst.appendChild(h);
+    }
+    window.setTimeout(function(){
+      if(burst&&burst.parentNode)burst.parentNode.removeChild(burst);
+    },3500);
+  };
+})();
+</script>
+
+</body>
+</html>
